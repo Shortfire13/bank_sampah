@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\PegawaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\admin\AdminController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/tambahpegawai', [AdminController::class, 'tambahpegawai'])->name('tambahpegawai');
 Route::get('/tambahadmin', [AdminController::class, 'tambahadmin'])->name('tambahadmin');
 Route::get('/listadmin', [AdminController::class, 'listadmin'])->name('listadmin');
-Route::get('/listpegawai', [AdminController::class, 'listpegawai'])->name('listpegawai');
+Route::get('/listpegawai', [PegawaiController::class, 'index'])->name('listpegawai');
+Route::get('/tambahpegawai', [PegawaiController::class, 'create'])->name('tambahpegawai');

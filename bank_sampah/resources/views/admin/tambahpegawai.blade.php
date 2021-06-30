@@ -34,7 +34,8 @@
                         </span>
                     </div>
                     <div class="card-body p-5 bg-dark">
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="{{url('pegawai')}}" method="post">
+                            {{ csrf_field() }}
                             <!-- nama -->
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Nama Lengkap</label>

@@ -28,25 +28,26 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body p-5 bg-dark">
-                        <table class="table table-striped dataTable dtr-inline" aria-describedby="adminlist_info"
-                            role="grid" id="adminlist">
+                        <table class="table table-bordered" aria-describedby="adminlist_info"
+                            role="grid">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">No.</th>
                                     <th scope="col">Nama</th>
-                                    <th scope="col">Username</th>
                                     <th scope="col">Email</th>
+                                    <th scope="col">Username</th>
                                     <th scope="col">No. Hp</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($datas as $item)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Hanif</td>
-                                    <td>Shortfire</td>
-                                    <td>hanifsatrio12@gmail.com</td>
-                                    <td>089698672710</td>
+                                    <td>{{$item->id}}</td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->email}}</td>
+                                    <td>{{$item->username}}</td>
+                                    <td>{{$item->no_telp}}</td>
                                     <td>
                                         <a href=""
                                             class=" btn btn-primary mr-2" data-tooltip="tooltip" data-placement="bottom"
@@ -58,6 +59,7 @@
                                         </a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -42,20 +42,20 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Hanif</td>
-                                    <td>Shortfire</td>
-                                    <td>hanifsatrio12@gmail.com</td>
-                                    <td>089698672710</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td>
-                                        <a href=""
+                                        {{-- <a href=""
                                             class=" btn btn-primary mr-2" data-tooltip="tooltip" data-placement="bottom"
                                             title="Edit">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
                                         <a type="button" class="btn btn-danger text-white" data-target="#deleteModal" role="button" data-tooltip="tooltip" data-toggle="modal" data-placement="bottom" title="Hapus">
                                             <i class="bi bi-trash-fill"></i>
-                                        </a>
+                                        </a> --}}
                                     </td>
                                 </tr>
                             </tbody>
