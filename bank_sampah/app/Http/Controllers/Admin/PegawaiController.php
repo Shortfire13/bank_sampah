@@ -42,6 +42,13 @@ class PegawaiController extends Controller
     {
         $model = new Pegawai;
         $model->name = $request->name;
+        $model->username = $request->username;
+        $model->email = $request->email;
+        $model->password = $request->password;
+        $model->no_telp = $request->no_telp;
+        $model->save();
+
+        return redirect('pegawai');
     }
 
     /**

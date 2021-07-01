@@ -46,21 +46,21 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Username</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="username" class="form-control" maxlength="255" id="password" placeholder="Masukkan Username" required>
+                                    <input type="text" name="username" class="form-control" maxlength="255" id="username" placeholder="Masukkan Username" required>
                                 </div>
                             </div>
                             {{-- email --}}
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Email</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="" placeholder="Masukkan Email" maxlength="255" required>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Masukkan Email" maxlength="255" required>
                                 </div>
                             </div>
                              {{-- No Telpon --}}
                              <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Nomer Telepon</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="Masukkan Nomer Telepon" maxlength="255" required>
+                                    <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="Masukkan Nomer Telepon" maxlength="255" required>
                                 </div>
                             </div>
                              <!-- password -->

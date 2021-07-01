@@ -22,3 +22,5 @@ Route::get('/tambahadmin', [AdminController::class, 'tambahadmin'])->name('tamba
 Route::get('/listadmin', [AdminController::class, 'listadmin'])->name('listadmin');
 Route::get('/listpegawai', [PegawaiController::class, 'index'])->name('listpegawai');
 Route::get('/tambahpegawai', [PegawaiController::class, 'create'])->name('tambahpegawai');
+// resource
+Route::resource('pegawai', PegawaiController::class);
