@@ -9,12 +9,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">List Pegawai</h1>
+                    <h1 class="m-0">Manajemen Pegawai</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
-                        <li class="breadcrumb-item active">List Pegawai</li>
+                        <li class="breadcrumb-item active">Manajemen Pegawai</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,8 +28,9 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body p-5 bg-dark">
-                        <table class="table table-bordered" aria-describedby="adminlist_info"
-                            role="grid">
+                        <a href="{{route('tambahpegawai')}}" class="btn btn-info">Tambah Pegawai</a>
+                        <div class="mt-2"></div>
+                        <table class="table table-bordered" role="grid">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">No.</th>
@@ -50,7 +51,7 @@
                                     <td>{{$item->no_telp}}</td>
                                     <td>
                                         <a href=""
-                                            class=" btn btn-primary mr-2" data-tooltip="tooltip" data-placement="bottom"
+                                            class="btn btn-primary mr-2" data-tooltip="tooltip" data-placement="bottom"
                                             title="Edit">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>

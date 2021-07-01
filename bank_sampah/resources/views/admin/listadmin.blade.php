@@ -9,12 +9,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">List Admin</h1>
+                    <h1 class="m-0">Manajemen Admin</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
-                        <li class="breadcrumb-item active">List Admin</li>
+                        <li class="breadcrumb-item active">Manajemen Admin</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,36 +28,39 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body p-5 bg-dark">
-                        <table class="table table-striped dataTable dtr-inline" aria-describedby="adminlist_info"
-                            role="grid" id="adminlist">
+                        <a href="{{route('tambahadmin')}}">
+                            <div class="btn btn-primary">Tambahkan Admin</div>
+                        </a>
+                        <div class="mt-2"></div>
+                        <table class="table table-bordered" role="grid">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">No.</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Username</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">No. Hp</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($datas as $item)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{$item->id}}</td>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->username}}</td>
+                                    <td>{{$item->email}}</td>
                                     <td>
-                                        {{-- <a href=""
-                                            class=" btn btn-primary mr-2" data-tooltip="tooltip" data-placement="bottom"
+                                        <a href="{{url('admin/'.$item->id.'/edit') }}"
+                                            class="btn btn-primary mr-2" data-tooltip="tooltip" data-placement="bottom"
                                             title="Edit">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
                                         <a type="button" class="btn btn-danger text-white" data-target="#deleteModal" role="button" data-tooltip="tooltip" data-toggle="modal" data-placement="bottom" title="Hapus">
                                             <i class="bi bi-trash-fill"></i>
-                                        </a> --}}
+                                        </a>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

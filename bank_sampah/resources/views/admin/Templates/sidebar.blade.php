@@ -35,50 +35,22 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('listadmin')}}" class="nav-link">
               <i class="fas fa-users"></i>
               <p>
                 Manajemen Admin
-                <i class="fas fa-angle-left right"></i>
+                <i class="fas fa-angle"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('tambahadmin')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tambah Admin</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('listadmin')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List Admin</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('listpegawai')}}" class="nav-link">
               <i class="fas fa-users"></i>
               <p>
                 Manajemen Pegawai
-                <i class="fas fa-angle-left right"></i>
+                <i class="fas fa-angle"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('tambahpegawai')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tambah Pegawai</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('listpegawai')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List Pegawai</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
             <a href="" class="nav-link">

@@ -24,3 +24,5 @@ Route::get('/listpegawai', [PegawaiController::class, 'index'])->name('listpegaw
 Route::get('/tambahpegawai', [PegawaiController::class, 'create'])->name('tambahpegawai');
 // resource
 Route::resource('pegawai', PegawaiController::class);
+Route::resource('admin', AdminController::class);
+// put

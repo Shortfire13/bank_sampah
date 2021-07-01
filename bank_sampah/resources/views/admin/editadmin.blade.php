@@ -9,12 +9,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Tambah Admin</h1>
+                    <h1 class="m-0">Edit Admin</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Tambah Admin</li>
+                        <li class="breadcrumb-item active">Edit Admin</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,13 +29,14 @@
                     <div class="card-header">
                         <span>
                             <h3><strong>
-                                    <center>FORM TAMBAH ADMIN</center>
+                                    <center>FORM EDIT ADMIN</center>
                                 </strong></h3>
                         </span>
                     </div>
                     <div class="card-body p-5 bg-dark">
-                        <form action="{{url('admin')}}" method="post">
+                        <form action="{{url('admin/'.$model->id)}}" method="post">
                             {{ csrf_field() }}
+                            <input type="hidden" name="_method" value="PATCH">
                             <!-- nama -->
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Nama Lengkap</label>
