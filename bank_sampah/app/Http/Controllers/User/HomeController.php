@@ -11,4 +11,20 @@ class HomeController extends Controller
     {
         return view('user.index');
     }
+    public function login()
+    {
+        return view('user.login');
+    }
+    public function register()
+    {
+        return view('user.register');
+    }
+    public function profile()
+    {
+        return view('user.profile');
+    }
+    public function produk()
+    {
+        return view('user.produk');
+    }
 }

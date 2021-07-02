@@ -22,6 +22,10 @@ Route::get('/tambahadmin', [AdminController::class, 'tambahadmin'])->name('tamba
 Route::get('/listadmin', [AdminController::class, 'listadmin'])->name('listadmin');
 Route::get('/listpegawai', [PegawaiController::class, 'index'])->name('listpegawai');
 Route::get('/tambahpegawai', [PegawaiController::class, 'create'])->name('tambahpegawai');
+Route::get('/register', [HomeController::class, 'register'])->name('register');
+Route::get('/login', [HomeController::class, 'login'])->name('login');
+Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 // resource
 Route::resource('pegawai', PegawaiController::class);
 Route::resource('admin', AdminController::class);
