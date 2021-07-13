@@ -34,7 +34,7 @@
                         </span>
                     </div>
                     <div class="card-body p-5 bg-dark">
-                        <form action="{{url('admin/'.$model->id)}}" method="post">
+                        <form action="" method="post">
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value="PATCH">
                             <!-- nama -->
