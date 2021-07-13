@@ -50,7 +50,7 @@
                                     <td>{{$item->username}}</td>
                                     <td>{{$item->email}}</td>
                                     <td>
-                                        <a href="/editadmin/{{$item->id}}"
+                                        <a href="/admin/editadmin/{{$item->id}}"
                                             class="btn btn-primary mr-2" data-tooltip="tooltip" data-placement="bottom"
                                             title="Edit">
                                             <i class="bi bi-pencil-square"></i>

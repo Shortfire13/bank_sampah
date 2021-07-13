@@ -40,19 +40,6 @@ class AdminController extends Controller
     }
     public function edit($id)
     {
-        $admin = DB::table('admin')->where($id,id)->first();
-        return view('admin.editadmin',compact('admin'));
+        return view('admin.editadmin');
     }
-
-    public function update(Request $request)
-    {
-        DB::table('admin')->where('id',$request->id)->update([
-            'name' => $request->nama,
-            'email' => $request->email,
-            'username' => $request->username,
-            'password' => $request->password
-        ]);
-        return redirect()->route('listadmin')->with(success,'Admin Berhasil di Update');
-    }
-      
 }
