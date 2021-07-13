@@ -11,7 +11,7 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="contact.html">Register</a></li>
+          <li><a href="{{route('register')}}">Register</a></li>
           <li class="get-started"><a href="#get-started">Login</a></li>
         </ul>
       </nav><!-- .nav-menu -->
