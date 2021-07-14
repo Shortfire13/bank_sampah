@@ -17,6 +17,7 @@ use App\Http\Controllers\admin\PegawaiController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
@@ -28,10 +29,9 @@ Route::get('/listpegawai', [PegawaiController::class, 'index'])->name('listpegaw
 Route::get('/tambahpegawai', [PegawaiController::class, 'create'])->name('tambahpegawai');
 
 //Admin
-Route::get('/editadmin/{id}',[AdminController::class, 'edit'])->name('editadmin');
-Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/tambahadmin', [AdminController::class, 'tambahadmin'])->name('tambahadmin');
 Route::get('/listadmin', [AdminController::class, 'listadmin'])->name('listadmin');
+Route::get('/editadmin/{id}',[AdminController::class, 'edit'])->name('editadmin');
 
 // resource
 Route::resource('pegawai', PegawaiController::class);
