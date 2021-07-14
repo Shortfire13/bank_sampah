@@ -45,13 +45,6 @@
                         <li><i class="bx bx-check-double"></i>Anda Akan Mendapatkan Uang Dari Sampah Yang Anda Jual.</li>
                         <li><i class="bx bx-check-double"></i>Uang Anda Akan Disimpan Dengan Aman Di Rekening Anda Dan Dapat Ditarik Kapanpun Yang Anda Mau.</li>
                     </ul>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                        in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
-                    </p>
                 </div>
 
             </div>
@@ -60,7 +53,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Cta Section ======= -->
-   
+
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -83,40 +76,6 @@
                         <div class="icon"><i class="las la-book-open" style="color: #e9bf06;"></i></div>
                         <h4 class="title"><a href="">Rekening Digital</a></h4>
                         <p class="description">Rekening anda akan berbentuk digital sehingga anda tidak perlu ribet mengontrol rekening anda.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-box">
-                        <div class="icon"><i class="las la-book" style="color: #3fcdc7;"></i></div>
-                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur</p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-box">
-                        <div class="icon"><i class="las la-tachometer-alt" style="color:#41cf2e;"></i></div>
-                        <h4 class="title"><a href="">Magni Dolores</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box">
-                        <div class="icon"><i class="las la-globe-americas" style="color: #d6ff22;"></i></div>
-                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                            praesentium voluptatum deleniti atque</p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box">
-                        <div class="icon"><i class="las la-clock" style="color: #4680ff;"></i></div>
-                        <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
-                            tempore, cum soluta nobis est eligendi</p>
                     </div>
                 </div>
             </div>

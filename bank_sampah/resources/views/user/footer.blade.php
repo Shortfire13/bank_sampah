@@ -5,8 +5,8 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>Serenity</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+            <h3>CallTrash</h3>
+            <p>CallTrash adalah solusi kebersihan rumah anda serta dapatkan benefit dari setiap penjualan sampah yang anda jual.</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">

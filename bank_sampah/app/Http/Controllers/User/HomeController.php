@@ -27,4 +27,8 @@ class HomeController extends Controller
     {
         return view('user.produk');
     }
+    public function riwayat()
+    {
+        return view('user.riwayat');
+    }
 }
