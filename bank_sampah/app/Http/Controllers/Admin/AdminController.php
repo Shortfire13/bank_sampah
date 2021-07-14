@@ -15,17 +15,17 @@ class AdminController extends Controller
     }
     public function tambahadmin()
     {
-        return view('admin.tambahadmin');
+        return view('admin.Admin.tambahadmin');
     }
     public function listadmin()
     {
         $datas = Admin::all();
-        return view('admin.listadmin', compact('datas'));
+        return view('admin.Admin.listadmin', compact('datas'));
     }
     public function create()
     {
         $model = new Admin;
-        return view('admin.tambahadmin', compact('model'));
+        return view('admin.Admin.tambahadmin', compact('model'));
     }
     public function store(Request $request)
     {
@@ -40,6 +40,6 @@ class AdminController extends Controller
     }
     public function edit($id)
     {
-        return view('admin.editadmin');
+        return view('admin.Admin.editadmin');
     }
 }
