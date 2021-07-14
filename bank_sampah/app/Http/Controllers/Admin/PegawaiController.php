@@ -17,7 +17,7 @@ class PegawaiController extends Controller
     {
         $datas = Pegawai::all();
 
-        return view('admin.Pegawai.listpegawai', compact('datas'));
+        return view('admin.ManajemenPegawai.index', compact('datas'));
         // return $datas;
     }
 
@@ -29,7 +29,7 @@ class PegawaiController extends Controller
     public function create()
     {
         $model = new Pegawai;
-        return view('admin.Pegawai.tambahpegawai', compact('model'));
+        return view('admin.ManajemenPegawai.create', compact('model'));
     }
 
     /**

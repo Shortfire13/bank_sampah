@@ -22,10 +22,10 @@
   <!-- Preloader -->
   
 
-@include('admin.Templates.navbar')
-@include('admin.Templates.sidebar')
+@include('admin.MasterLayouts.navbar')
+@include('admin.MasterLayouts.sidebar')
 {{-- @yield('content') --}}
-@include('admin.Templates.footer')
+@include('admin.MasterLayouts.footer')
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->

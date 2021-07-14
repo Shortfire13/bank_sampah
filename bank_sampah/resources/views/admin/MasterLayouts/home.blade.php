@@ -1,4 +1,4 @@
-@extends('admin.Templates.main')
+@extends('admin.MasterLayouts.main')
 
 @section('content')
 <!-- Content Wrapper. Contains page content -->

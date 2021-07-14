@@ -1,4 +1,4 @@
-@extends('admin.Templates.main')
+@extends('admin.MasterLayouts.main')
 
 @section('content')
 <!-- Content Wrapper. Contains page content -->
@@ -34,7 +34,7 @@
                         </span>
                     </div>
                     <div class="card-body p-5 bg-dark">
-                        <form action="{{url('pegawai')}}" method="post">
+                        <form action="{{url('tambahpegawai')}}" method="post">
                             {{ csrf_field() }}
                             <!-- nama -->
                             <div class="form-group row">

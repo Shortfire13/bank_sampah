@@ -35,7 +35,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('listadmin')}}" class="nav-link">
+            <a href="" class="nav-link">
               <i class="fas fa-users"></i>
               <p>
                 Manajemen Admin
@@ -44,7 +44,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('listpegawai')}}" class="nav-link">
+            <a href="{{route('manajemenpegawai')}}" class="nav-link">
               <i class="fas fa-users"></i>
               <p>
                 Manajemen Pegawai

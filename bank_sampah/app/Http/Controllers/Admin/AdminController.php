@@ -11,9 +11,9 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.Templates.home');
+        return view('admin.MasterLayouts.home');
     }
-    public function tambahadmin()
+    /*public function tambahadmin()
     {
         return view('admin.Admin.tambahadmin');
     }
@@ -34,5 +34,5 @@ class AdminController extends Controller
     public function edit($id)
     {
         return view ('admin.Admin.edit');
-    }
+    }*/
 }

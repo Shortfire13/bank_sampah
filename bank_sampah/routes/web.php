@@ -25,15 +25,9 @@ Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/riwayat', [HomeController::class, 'riwayat'])->name('riwayat');
 
 //Pegawai
-Route::get('/listpegawai', [PegawaiController::class, 'index'])->name('listpegawai');
-Route::get('/tambahpegawai', [PegawaiController::class, 'create'])->name('tambahpegawai');
+Route::get('/manajemenpegawai', [PegawaiController::class, 'index'])->name('manajemenpegawai');
+Route::get('/manajemenpegawai/tambahpegawai', [PegawaiController::class, 'create'])->name('tambahpegawai');
 
 //Admin
-Route::get('/tambahadmin', [AdminController::class, 'tambahadmin'])->name('tambahadmin');
-Route::get('/listadmin', [AdminController::class, 'listadmin'])->name('listadmin');
-Route::get('/editadmin/{id}', [AdminController::class, 'edit']);
 
-// resource
-Route::resource('pegawai', PegawaiController::class);
-Route::resource('admin', AdminController::class);
-// put
+
