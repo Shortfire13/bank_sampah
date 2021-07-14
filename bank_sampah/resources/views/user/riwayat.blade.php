@@ -16,7 +16,7 @@
             <div class="container">
                 <ol>
                     <li><a href="{{route('index')}}">Home</a></li>
-                    <li>Contact</li>
+                    <li>Riwayat</li>
                 </ol>
             </div>
         </section><!-- End Breadcrumbs -->
@@ -24,13 +24,14 @@
         <!-- ======= Contact Section ======= -->
         <section>
             <div class="container">
-                <table class="table">
+                <table class="table table-bordered">
                     <thead>
                     <tr>
                         <th>No.</th>
                         <th>Tanngal Penjualan</th>
                         <th>Berat Barang</th>
                         <th>Total</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,11 +40,9 @@
                         <td>29-06-2021</td>
                         <td>10kg</td>
                         <td>Rp.10.000</td>
-                    </tr>
-                    <tr>
-                        <td scope="row"></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            <a href="" class="btn btn-success">Lihat Transaksi</a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
