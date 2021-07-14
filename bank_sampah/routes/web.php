@@ -31,7 +31,7 @@ Route::get('/tambahpegawai', [PegawaiController::class, 'create'])->name('tambah
 //Admin
 Route::get('/tambahadmin', [AdminController::class, 'tambahadmin'])->name('tambahadmin');
 Route::get('/listadmin', [AdminController::class, 'listadmin'])->name('listadmin');
-Route::get('/editadmin/{id}',[AdminController::class, 'edit'])->name('editadmin');
+Route::get('/editadmin/{id}', [AdminController::class, 'edit']);
 
 // resource
 Route::resource('pegawai', PegawaiController::class);

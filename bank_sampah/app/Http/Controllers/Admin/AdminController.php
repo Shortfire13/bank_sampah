@@ -33,6 +33,6 @@ class AdminController extends Controller
     }
     public function edit($id)
     {
-        return view('admin.Admin.editadmin');
+        return view ('admin.Admin.edit');
     }
 }
