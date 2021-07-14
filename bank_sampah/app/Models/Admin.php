@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Model
 {
     use HasFactory;
-    // admins
     protected $table = "admin";
+    protected $guarded = ['id'];
 }

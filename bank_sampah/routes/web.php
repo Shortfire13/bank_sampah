@@ -23,13 +23,16 @@ Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/riwayat', [HomeController::class, 'riwayat'])->name('riwayat');
 
+//Pegawai
 Route::get('/listpegawai', [PegawaiController::class, 'index'])->name('listpegawai');
 Route::get('/tambahpegawai', [PegawaiController::class, 'create'])->name('tambahpegawai');
 
+//Admin
 Route::get('/editadmin/{id}',[AdminController::class, 'edit'])->name('editadmin');
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/tambahadmin', [AdminController::class, 'tambahadmin'])->name('tambahadmin');
 Route::get('/listadmin', [AdminController::class, 'listadmin'])->name('listadmin');
+
 // resource
 Route::resource('pegawai', PegawaiController::class);
 Route::resource('admin', AdminController::class);

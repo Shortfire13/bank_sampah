@@ -24,19 +24,12 @@ class AdminController extends Controller
     }
     public function create()
     {
-        $model = new Admin;
-        return view('admin.Admin.tambahadmin', compact('model'));
+        return view('admin.Admin.tambahadmin');
     }
     public function store(Request $request)
     {
-        $model = new Admin;
-        $model->name = $request->name;
-        $model->username = $request->username;
-        $model->email = $request->email;
-        $model->password = $request->password;
-        $model->save();
-
-        return redirect('admin');
+        Admin::create($request->all());
+        return redirect('/listadmin');
     }
     public function edit($id)
     {
