@@ -33,31 +33,17 @@
                 Dashboard
               </p>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="fas fa-users"></i>
-              <p>
-                Manajemen Admin
-                <i class="fas fa-angle"></i>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('manajemenpegawai')}}" class="nav-link">
-              <i class="fas fa-users"></i>
-              <p>
-                Manajemen Pegawai
-                <i class="fas fa-angle"></i>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="fas fa-user"></i>
-              <p>Manajemen User</p>
-            </a>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-fw fa-folder"></i>
+                  <span>Manajemen Users</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                  <a class="dropdown-item" href="">Manajemen Admin</a>
+                  <a class="dropdown-item" href="">Manajemen Pegawai</a>
+                  <a class="dropdown-item" href="">Manajemen User</a>
+              </div>
+            </li>
           <li class="nav-item">
             <a href="" class="nav-link">
               <i class="fas fa-cash-register"></i>

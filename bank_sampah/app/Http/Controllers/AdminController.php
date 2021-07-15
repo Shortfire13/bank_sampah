@@ -1,24 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\Pegawai;
 
-class PegawaiController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() 
+    public function index()
     {
-        $datas = Pegawai::all();
-
-        return view('admin.ManajemenPegawai.index', compact('datas'));
-        // return $datas;
+        return view('admin.MasterLayouts.home');
     }
 
     /**
@@ -28,8 +23,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        $model = new Pegawai;
-        return view('admin.ManajemenPegawai.create', compact('model'));
+        //
     }
 
     /**
@@ -40,15 +34,7 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        $model = new Pegawai;
-        $model->name = $request->name;
-        $model->username = $request->username;
-        $model->email = $request->email;
-        $model->password = $request->password;
-        $model->no_telp = $request->no_telp;
-        $model->save();
-
-        return redirect('pegawai');
+        //
     }
 
     /**

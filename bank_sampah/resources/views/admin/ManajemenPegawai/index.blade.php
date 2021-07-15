@@ -28,7 +28,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body p-5 bg-dark">
-                        <a href="{{route('tambahpegawai')}}" class="btn btn-info">Tambah Pegawai</a>
+                        <a href="" class="btn btn-info">Tambah Pegawai</a>
                         <div class="mt-2"></div>
                         <table class="table table-bordered" role="grid">
                             <thead class="thead-dark">
