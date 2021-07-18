@@ -9,7 +9,7 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">Manajemen Pegawai</h3>
                                 <div class="right">
-                                    <a href="/dash/pegawai/create"></a><i class="lnr lnr-plus-circle"></i>Tambah Data
+                                    <a href="" type="button" class="btn btn-primary"><i class="lnr lnr-plus-circle"></i>Tambah Data</a>
                                 </div>
                             </div>
                             @if ($mesagge = Session::get('succes'))

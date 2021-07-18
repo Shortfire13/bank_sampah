@@ -30,6 +30,7 @@ Route::get('/riwayat', [HomeController::class, 'riwayat'])->name('riwayat');
 //Halaman Admin
 Route::get('/dash', [DashboardController::class, 'index']);
 Route::get('/dash/adm', [AdminController::class, 'index']);
+Route::get('/dash/tambahadmin', [AdminController::class, 'create']);
 Route::get('/dash/pegawai', [PegawaiController::class, 'index']);
 Route::get('/dash/pegawai/add', [PegawaiController::class, 'create']);
 Route::get('/dash/user', [UserController::class, 'index']);
