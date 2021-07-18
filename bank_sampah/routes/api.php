@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProdukApiController;
+use App\Http\Controllers\KategoriApiController;
+use App\Http\Controllers\SampahApiController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,4 +15,6 @@ use App\Http\Controllers\ProdukApiController;
 |
 */
 
-Route::get('/produk', [ProdukApiController::class, 'produk'])->name('produk');
+Route::get('/sampah', [SampahApiController::class, 'sampah'])->name('sampah');
+Route::get('/sampah/{id}', [SampahApiController::class, 'show'])->name('show');
+Route::get('/kategori', [KategoriApiController::class, 'kategori'])->name('kategori');
