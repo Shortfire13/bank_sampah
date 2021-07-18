@@ -18,10 +18,10 @@ class CreatePegawaiTable extends Migration
             $table->string('name');
             $table->string('alamat');
             $table->string('umur');
+            $table->string('no_telp');
             $table->string('email')->unique();
             $table->string('username');
             $table->string('password');
-            $table->string('no_telp');
             $table->timestamps();
         });
     }

@@ -9,12 +9,12 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">Manajemen Pegawai</h3>
                                 <div class="right">
-                                    <button type="button" class="btn"><i class="lnr lnr-plus-circle"></i>Tambah Data</button>
+                                    <a href="/dash/pegawai/create"></a><i class="lnr lnr-plus-circle"></i>Tambah Data
                                 </div>
                             </div>
                             @if ($mesagge = Session::get('succes'))
                                 <div class="alert alert-succes">
-                                    <p>{{message}}</p>
+                                    <p>{{$message}}</p>
                                 </div>
                             @endif
                             </div>
