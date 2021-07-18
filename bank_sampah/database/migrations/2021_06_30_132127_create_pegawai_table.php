@@ -16,7 +16,9 @@ class CreatePegawaiTable extends Migration
         Schema::create('pegawai', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('alamat');
+            $table->string('umur');
+            $table->string('email')->unique();
             $table->string('username');
             $table->string('password');
             $table->string('no_telp');

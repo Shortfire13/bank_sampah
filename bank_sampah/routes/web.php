@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\HomeController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminCallTrash\DashboardController;
+use App\Http\Controllers\AdminCallTrash\AdminController;
+use App\Http\Controllers\AdminCallTrash\PegawaiController;
+use App\Http\Controllers\AdminCallTrash\UserController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -24,13 +27,16 @@ Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/riwayat', [HomeController::class, 'riwayat'])->name('riwayat');
 
-//Admin
-Route::get('/admin', [AdminController::class, 'index']);
-//Pegawai
+//Halaman Admin
+Route::get('/dash', [DashboardController::class, 'index']);
+Route::get('/dash/adm', [AdminController::class, 'index']);
+Route::get('/dash/pegawai', [PegawaiController::class, 'index']);
+Route::get('/dash/user', [UserController::class, 'index']);
 
 
 
 
+//Auth
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
