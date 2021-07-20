@@ -10,10 +10,11 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-            <li class=""><a href="{{route('riwayat')}}">Riwayat</a></li>
+            
           <li class=""><a href="{{route('index')}}">Home</a></li>
 
           @guest
+
           @if (Route::has('register'))
           <li class="nav-item">
               <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -28,6 +29,8 @@
 
          
       @else
+           <li class=""><a href="{{route('riwayat')}}">Riwayat</a></li>
+
           <li class="nav-item dropdown">
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   {{ Auth::user()->name }}
