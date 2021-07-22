@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminCallTrash;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Admin;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('superadmin.admin.index');
+        $admin = Admin::all();
+        return view('superadmin.admin.index', compact(['admin']));
     }
 
     /**
@@ -35,7 +37,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('test');
     }
 
     /**

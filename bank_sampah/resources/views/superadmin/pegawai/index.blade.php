@@ -1,4 +1,6 @@
 @extends('superadmin.layouts.master')
+@section('title', 'Data Pegawai')
+
 @section('content')
     <div class="main">
         <div class="main-content">
@@ -7,16 +9,10 @@
                     <div class="col-md-12">
                         <div class="panel">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Manajemen Pegawai</h3>
+                                <h3 class="panel-title">@yield('title')</h3>
                                 <div class="right">
-                                    <a href="" type="button" class="btn btn-primary"><i class="lnr lnr-plus-circle"></i>Tambah Data</a>
+                                    <a href="/dash/pegawai/add" type="button" class="btn btn-primary"><i class="lnr lnr-plus-circle"></i>Tambah Data</a>
                                 </div>
-                            </div>
-                            @if ($mesagge = Session::get('succes'))
-                                <div class="alert alert-succes">
-                                    <p>{{$message}}</p>
-                                </div>
-                            @endif
                             </div>
                             <div class="panel-body">
                                 <table class="table table-bordered">
@@ -37,7 +33,7 @@
                                             @foreach ($pegawai as $data)
                                             <tr>
                                                 <td>{{$no++}}.</td> 
-                                                <td>{{$data->name}}</td> 
+                                                <td>{{$data->nama_pegawai}}</td> 
                                                 <td>{{$data->alamat}}</td> 
                                                 <td>{{$data->umur}} th</td> 
                                                 <td>{{$data->no_telp}}</td> 
