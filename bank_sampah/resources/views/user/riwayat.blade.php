@@ -35,6 +35,7 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach ($riwayat as $item)
                     <tr>
                         <td scope="row">1</td>
                         <td>29-06-2021</td>
@@ -44,6 +45,7 @@
                             <a href="" class="btn btn-success">Lihat Transaksi</a>
                         </td>
                     </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
