@@ -21,9 +21,11 @@ class HomeController extends Controller
     {
         return view('user.register');
     }
-    public function profile()
+    public function profile(Request $request)
     {
-        return view('user.profile');
+        $id = $request->user()->id;
+        $profile = DB::table('users')->where('id', $id)->get();
+        return view('user.profile', compact('profile'));
     }
     public function produk()
     {

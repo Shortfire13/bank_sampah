@@ -23,42 +23,29 @@
       <div class="container">
         <div class="card">
             <div class="card-header bg-success text-light">
-            <h3 class="text-center">Perbarui Data Anda</h3>
+            <h3 class="text-center">Data Diri</h3>
           </div>
           <div class="card-body">
+           
             <form>
+              @foreach ($profile as $item)
               <div class="form-group">
-                <label for="InputNama">Nama Lengkap</label>
-                <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Lengkap Anda">
+                <label for="nama_user">Nama Lengkap</label>
+                <input type="text" class="form-control" id="nama_user" placeholder="" value="{{ $item->nama_user }}">
               </div>
               <div class="form-group">
-                <label for="InputUsername">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Masukkan Nama Lengkap Anda">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="" value="{{ $item->username }}">
               </div>
               <div class="form-group">
-                <label for="InputEmail">Email</label>
-                <input type="text" class="form-control" id="email" placeholder="Masukkan Email Anda">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" placeholder="" value="{{ $item->email }}"
               </div>
               <div class="form-group">
-                <label for="InputAlamat">Alamat</label>
-                <input type="text" class="form-control" id="alamat" placeholder="Masukkan Alamat Rumah Anda">
-              </div>
-              <div class="form-group">
-                <label for="InputFoto">Foto Profile</label>
-                <input type="file" class="form-control mb-5" id="alamat" placeholder="Masukkan Foto Profile Anda">
-              </div>
-              <div class="form-group">
-                <label for="InputPasswordLama">Password Lama</label>
-                <input type="password" class="form-control" id="passwordlama" placeholder="Masukkan Password Lama Anda">
-              </div>
-              <div class="form-group">
-                <label for="InputPasswordBaru">Password Baru</label>
-                <input type="password" class="form-control" id="passwordbaru" placeholder="Masukkan Password Baru Anda">
-              </div>
-              <div class="form-group">
-                <label for="KonfirmasiPassword">Password Baru</label>
-                <input type="password" class="form-control" id="confirmpass" placeholder="Masukkan Lagi Password Baru Anda">
-              </div>
+                <label for="alamat">Alamat</label>
+                <input type="text" class="form-control" id="alamat" placeholder="Alamat" value=""
+              </div> 
+            @endforeach
               <a href="" class="btn btn-success col-md-12 mt-2">Perbarui</a>
             </form>
           </div>
