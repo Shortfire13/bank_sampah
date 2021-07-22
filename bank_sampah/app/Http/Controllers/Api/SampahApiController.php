@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Sampah;
+
 
 class SampahApiController extends Controller
 {
-  public function show($id)
+    public function show($id)
 
   {
         $sampah = sampah::find($id);

@@ -14,13 +14,17 @@ class CreateDetailJualsTable extends Migration
     public function up()
     {
         Schema::create('detail_juals', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_sampah');
-            $table->string('qty');
-            $table->string('harga');
-            $table->string('subtotal');
-            $table->timestamps();
+            $table->id('id_detail')->unique();
+            $table->biginteger('id_jual')->unsigned();
+            $table->integer('jumlak_kg');
+            $table->integer('subtotal');
         });
+        Schema::table('detail_juals', function (Blueprint $table) {
+        
+            $table->foreign('id_jual')->references('id_jual')->on('jual_sampahs');
+        });
+        
+
     }
 
     /**

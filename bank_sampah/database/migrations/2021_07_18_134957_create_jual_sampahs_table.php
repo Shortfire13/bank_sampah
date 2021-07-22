@@ -14,13 +14,13 @@ class CreateJualSampahsTable extends Migration
     public function up()
     {
         Schema::create('jual_sampahs', function (Blueprint $table) {
-            $table->id();
-            $table->string('tgl_jual');
-            $table->string('total');
-            $table->string('status');
-            
-            $table->timestamps();
+            $table->id('id_jual')->unique();
+
+            $table->timestamp('tgl_jual');
+            $table->integer('total');
+            $table->string('status', 10);
         });
+        
     }
 
     /**
