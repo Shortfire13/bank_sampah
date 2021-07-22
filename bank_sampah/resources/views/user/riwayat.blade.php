@@ -29,21 +29,17 @@
                     <tr>
                         <th>No.</th>
                         <th>Tanngal Penjualan</th>
-                        <th>Berat Barang</th>
                         <th>Total</th>
-                        <th>Action</th>
+                        <th>Status</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach ($riwayat as $item)
                     <tr>
                         <td scope="row">1</td>
-                        <td>29-06-2021</td>
-                        <td>10kg</td>
-                        <td>Rp.10.000</td>
-                        <td>
-                            <a href="" class="btn btn-success">Lihat Transaksi</a>
-                        </td>
+                        <td>2{{ $item->tgl_jual }}</td>
+                        <td>{{ $item->total }}</td>
+                        <td>{{ $item->status }}</td>
                     </tr>
                     @endforeach
                     </tbody>
