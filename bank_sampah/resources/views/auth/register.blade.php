@@ -28,13 +28,13 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="form-group row">
-                                <label for="name"
+                                <label for="nama_user"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Nama Lengkap') }}</label>
                                 <div class="col-md-6">
-                                    <input id="name" type="text"
-                                        class="form-control @error('name') is-invalid @enderror" name="name"
-                                        value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                    @error('name')
+                                    <input id="nama_user" type="text"
+                                        class="form-control @error('nama_user') is-invalid @enderror" name="nama_user"
+                                        value="{{ old('nama_user') }}" required autocomplete="nama_user" autofocus>
+                                    @error('nama_user')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

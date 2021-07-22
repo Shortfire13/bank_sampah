@@ -21,7 +21,7 @@ class CreatePegawaiTable extends Migration
             $table->string('no_telp', 15);
             $table->string('email', 50)->unique();
             $table->string('username', 10);
-            $table->string('password', 15);
+            $table->string('password');
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ class CreateAdminTable extends Migration
             $table->text('alamat');
             $table->string('email', 30)->unique();
             $table->string('username', 15);
-            $table->string('password', 15);
+            $table->string('password');
             $table->string('foto');
             $table->timestamps();
         });

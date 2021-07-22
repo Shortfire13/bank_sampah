@@ -20,8 +20,7 @@ class CreateDetailJualsTable extends Migration
             $table->integer('subtotal');
         });
         Schema::table('detail_juals', function (Blueprint $table) {
-        
-            $table->foreign('id_jual')->references('id_jual')->on('jual_sampahs');
+            $table->foreign('id_jual')->references('id_jual')->on('jual_sampahs')->onDelete('cascade')->onUpdate('cascade');
         });
         
 
