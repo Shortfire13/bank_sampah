@@ -26,6 +26,7 @@ Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/riwayat', [HomeController::class, 'riwayat'])->name('riwayat');
+Route::get('/detail', [HomeController::class, 'detail'])->name('detail');
 
 //Halaman Admin
 Route::get('/dash', [DashboardController::class, 'index']);

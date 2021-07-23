@@ -37,4 +37,8 @@ class HomeController extends Controller
         $riwayat = DB::table('jual_sampahs')->where('id_user', $id)->get();
         return view('user.riwayat', compact('riwayat'));
     }
+    public function detail()
+    {
+        return view('user.detail');
+    }
 }

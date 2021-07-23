@@ -9,14 +9,15 @@
         <div class="breadcrumb-hero">
             <div class="container">
                 <div class="breadcrumb-hero">
-                    <h2>Riwayat</h2>
+                    <h2>Detail Transaksi</h2>
                 </div>
             </div>
         </div>
         <div class="container">
             <ol>
                 <li><a href="{{route('index')}}">Home</a></li>
-                <li>Riwayat</li>
+                <li><a href="{{route('riwayat')}}">Riwayat</a></li>
+                <li>Detail Transaksi</li>
             </ol>
         </div>
     </section><!-- End Breadcrumbs -->
@@ -28,26 +29,24 @@
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Tanngal Penjualan</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                        <th>Detail</th>
+                        <th>Nama Sampah</th>
+                        <th>Jumlah</th>
+                        <th>Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($riwayat as $item)
                     <tr>
                         <td scope="row">1</td>
-                        <td>2{{ $item->tgl_jual }}</td>
-                        <td>{{ $item->total }}</td>
-                        <td>{{ $item->status }}</td>
-                        <td>
-                            <a href="{{route('detail')}}" class="btn btn-success">
-                                <i class="fa fa-eye"></i>
-                            </a>
-                        </td>
+                        <td scope="row">Botol Bekas</td>
+                        <td scope="row">2kg</td>
+                        <td scope="row">5000</td>
                     </tr>
-                    @endforeach
+                    <tr>
+                        <td scope="row">2</td>
+                        <td scope="row">Botol Bekas</td>
+                        <td scope="row">2kg</td>
+                        <td scope="row">5000</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
