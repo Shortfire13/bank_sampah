@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\KategoriApiController;
 use App\Http\Controllers\Api\SampahApiController;
 use App\Http\Controllers\Api\AuthApiController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\Api\AuthApiController;
 |
 */
 
-Route::get('/sampah', [SampahApiController::class, 'sampah'])->name('sampah');
-Route::get('/sampah/{id}', [SampahApiController::class, 'show'])->name('show');
+ Route::get('/sampah', [SampahApiController::class, 'index'])->name('sampah');
+ Route::get('/sampah/{id}', [SampahApiController::class, 'store'])->name('show');
+
 Route::get('/kategori', [KategoriApiController::class, 'kategori'])->name('kategori');

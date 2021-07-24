@@ -24,8 +24,7 @@ class CreateSampahTable extends Migration
         });
         Schema::table('sampah', function (Blueprint $table) {
         
-            $table->foreign('id_kategori')->references('id_kategori')->on('kategoris')
-            ->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_kategori')->references('id_kategori')->on('kategoris')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
