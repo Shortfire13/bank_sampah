@@ -9,4 +9,8 @@ class Pegawai extends Model
 {
     protected $table = 'pegawai';
     protected $guarded = ['id_pegawai'];
+   
+    public function jual(){
+        return $this->hasMany(jual_sampah::class);
+    }
 }

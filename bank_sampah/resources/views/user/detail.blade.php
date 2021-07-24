@@ -35,9 +35,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($detail as $item)
                     <tr>
                         <td scope="row">1</td>
-                        <td scope="row">Botol Bekas</td>
+                        <td scope="row">{{ $item->nama_sampah }}</td>
                         <td scope="row">2kg</td>
                         <td scope="row">5000</td>
                     </tr>
@@ -47,6 +48,7 @@
                         <td scope="row">2kg</td>
                         <td scope="row">5000</td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function profile(Request $request)
     {
         $id = $request->user()->id;
-        $profile = DB::table('users')->where('id', $id)->get();
+        $profile = DB::table('user')->where('id', $id)->get();
         return view('user.profile', compact('profile'));
     }
     public function produk()
