@@ -16,14 +16,12 @@ class CreateJualSampahsTable extends Migration
         Schema::create('jual_sampahs', function (Blueprint $table) {
             $table->id('id_jual')->unique();
             $table->bigInteger('id_user')->unsigned();
-            $table->bigInteger('id_pegawai')->unsigned();
             $table->timestamp('tgl_jual');
             $table->integer('total');
             $table->string('status', 10);
         });
         Schema::table('jual_sampahs', function (Blueprint $table) {
             $table->foreign('id_user')->references('id')->on('user')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_pegawai')->references('id_pegawai')->on('pegawai')->onDelete('cascade')->onUpdate('cascade');
            
             
         });

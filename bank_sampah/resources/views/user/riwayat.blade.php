@@ -42,7 +42,7 @@
                         <td>{{ $item->total }}</td>
                         <td>{{ $item->status }}</td>
                         <td>
-                            <a href="{{route('detail')}}" class="btn btn-success">
+                            <a href="/detail/{{ $item->tgl_jual}}" class="btn btn-success">
                                 <i class="fa fa-eye"></i>
                             </a>
                         </td>

@@ -4,8 +4,10 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
+use App\Models\detail_jual;
 use Illuminate\Support\Facades\DB,
     App\Http\Controllers\Controller;
+    
 
 class HomeController extends Controller
 {
@@ -31,14 +33,6 @@ class HomeController extends Controller
     {
         return view('user.produk');
     }
-    public function riwayat(Request $request)
-    {
-        $id = $request->user()->id;
-        $riwayat = DB::table('jual_sampahs')->where('id_user', $id)->get();
-        return view('user.riwayat', compact('riwayat'));
-    }
-    public function detail()
-    {
-        return view('user.detail');
-    }
+
+   
 }

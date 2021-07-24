@@ -35,10 +35,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($detail as $item)
+                    @foreach ($detail  as $item)
                     <tr>
                         <td scope="row">1</td>
-                        <td scope="row">{{ $item->nama_sampah }}</td>
+                        <td scope="row">{{ $item->jumlak_kg }}</td>
                         <td scope="row">2kg</td>
                         <td scope="row">5000</td>
                     </tr>
@@ -55,3 +55,5 @@
     </section><!-- End Contact Section -->
 
 </main><!-- End #main -->
+
+@endsection

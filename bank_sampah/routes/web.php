@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\AdminCallTrash\DashboardController;
 use App\Http\Controllers\AdminCallTrash\AdminController;
@@ -25,8 +26,8 @@ Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
-Route::get('/riwayat', [HomeController::class, 'riwayat'])->name('riwayat');
-Route::get('/detail', [HomeController::class, 'detail'])->name('detail');
+Route::get('/riwayat', [RiwayatController::class, 'riwayat'])->name('riwayat');
+Route::get('/detail/{detail:tgl_jual}', [RiwayatController::class, 'detail']);
 
 //Halaman Admin
 Route::get('/dash', [DashboardController::class, 'index']);

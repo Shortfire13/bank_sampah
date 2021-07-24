@@ -11,5 +11,7 @@ class detail_jual extends Model
     
     public function detail(){
         return $this->belongsTo(jual_sampah::class);
+
     }
+
 }
