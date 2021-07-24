@@ -1,4 +1,6 @@
 @extends('superadmin.layouts.master')
+@section('title', 'Data User')
+
 @section('content')
     <div class="main">
         <div class="main-content">
@@ -7,27 +9,31 @@
                     <div class="col-md-12">
                         <div class="panel">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Manajemen Pegawai</h3>
+                                <h3 class="panel-title">@yield('title')</h3>
+                                <div class="right">
+                                    <a href="/dash/user/add" type="button" class="btn btn-primary"><i class="lnr lnr-plus-circle"></i>Tambah Data</a>
+                                </div>
+                            </div>
                             <div class="panel-body">
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>No.</th>
-                                            <th>Nama</th>
-                                            <th>Alamat</th>
-                                            <th>Umur</th>
-                                            <th>No. Hp</th>
-                                            <th>Email</th>
-                                            <th>Username</th>
-                                            <th>Action</th>
+                                            <th scope="col">No.</th>
+                                            <th scope="col">Nama</th>
+                                            <th scope="col">Alamat</th>
+                                            <th scope="col">Umur</th>
+                                            <th scope="col">No. Hp</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Username</th>
+                                            <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php $no=1 ?>
-                                            @foreach ($pegawai as $data)
+                                            @foreach ($users as $data)
                                             <tr>
                                                 <td>{{$no++}}.</td> 
-                                                <td>{{$data->name}}</td> 
+                                                <td>{{$data->nama_pegawai}}</td> 
                                                 <td>{{$data->alamat}}</td> 
                                                 <td>{{$data->umur}} th</td> 
                                                 <td>{{$data->no_telp}}</td> 
@@ -54,4 +60,4 @@
             </div>
         </div>
     </div>
-@endsection
+@stop

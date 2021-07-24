@@ -19,12 +19,11 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">No.</th>
-                                            <th scope="col">Nama</th>
+                                            <th scope="col">Nama Pegawai</th>
                                             <th scope="col">Alamat</th>
                                             <th scope="col">Umur</th>
-                                            <th scope="col">No. Hp</th>
+                                            <th scope="col">No. Telepon</th>
                                             <th scope="col">Email</th>
-                                            <th scope="col">Username</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
@@ -37,8 +36,7 @@
                                                 <td>{{$data->alamat}}</td> 
                                                 <td>{{$data->umur}} th</td> 
                                                 <td>{{$data->no_telp}}</td> 
-                                                <td>{{$data->email}}</td> 
-                                                <td>{{$data->username}}</td> 
+                                                <td>{{$data->email}}</td>
                                                 <td>
                                                     <a href=""
                                                     class="btn btn-primary mr-2" data-tooltip="tooltip" data-placement="bottom"

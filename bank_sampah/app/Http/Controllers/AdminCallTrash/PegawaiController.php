@@ -22,7 +22,8 @@ class PegawaiController extends Controller
 
     public function store(Request $request)
     {
-        //
+        Pegawai::create($request->all());
+        return redirect('/dash/pegawai');
     }
 
     

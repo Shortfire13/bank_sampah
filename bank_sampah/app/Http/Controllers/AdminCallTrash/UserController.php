@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminCallTrash;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -14,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('superadmin.user.index');
+        $user = User::all();
+        return view('superadmin.user.index', compact(['user']));
     }
 
     /**

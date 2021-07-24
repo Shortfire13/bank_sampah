@@ -36,6 +36,9 @@ Route::get('/dash/adm/add', [AdminController::class, 'create']);
 //Pegawai
 Route::get('/dash/pegawai', [PegawaiController::class, 'index']);
 Route::get('/dash/pegawai/add', [PegawaiController::class, 'create']);
+Route::post('/dash/pegawai/add', [PegawaiController::class, 'store']);
+
+//user
 Route::get('/dash/user', [UserController::class, 'index']);
 
 

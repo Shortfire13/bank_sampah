@@ -49,7 +49,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <a href="" class="btn btn-success"><i class="fa fa-check-circle"></i> Daftarkan</a>
+                                        <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Daftarkan</button>
                                     </div>
                                 </form>
                                 @csrf
