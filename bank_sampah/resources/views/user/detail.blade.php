@@ -37,17 +37,12 @@
                 <tbody>
                     @foreach ($detail  as $item)
                     <tr>
-                        <td scope="row">1</td>
-                        <td scope="row">{{ $item->jumlak_kg }}</td>
-                        <td scope="row">2kg</td>
-                        <td scope="row">5000</td>
+                        <td scope="row">{{ $no++ }}</td>
+                        <td scope="row">{{ $item->nama_sampah }}</td>
+                        <td scope="row">{{ $item->jumlak_kg }} kg</td>
+                        <td scope="row">{{ $item->subtotal }}</td>
                     </tr>
-                    <tr>
-                        <td scope="row">2</td>
-                        <td scope="row">Botol Bekas</td>
-                        <td scope="row">2kg</td>
-                        <td scope="row">5000</td>
-                    </tr>
+
                     @endforeach
                 </tbody>
             </table>

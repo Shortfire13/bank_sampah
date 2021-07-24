@@ -37,7 +37,7 @@
                 <tbody>
                     @foreach ($riwayat as $item)
                     <tr>
-                        <td scope="row">1</td>
+                        <td scope="row">{{ $no++ }}</td>
                         <td>2{{ $item->tgl_jual }}</td>
                         <td>{{ $item->total }}</td>
                         <td>{{ $item->status }}</td>

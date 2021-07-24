@@ -14,18 +14,26 @@ class RiwayatController extends Controller
 {
     public function riwayat(Request $request)
     {
+        $no = 1;
         $id = $request->user()->id;
         $riwayat = DB::table('jual_sampahs')->where('id_user', $id)->get();
-        return view('user.riwayat', compact('riwayat'));
+        return view('user.riwayat', [
+            "riwayat" => $riwayat,
+            "no" => $no
+        ]);
     }
 
 
     
     
     public function detail(jual_sampah $detail){
-        $detail_jual = DB::table('jual_sampahs')
-        ->join('detail_juals', 'jual_sampahs.id_jual', '=', 'detail_juals.id_jual')
-        ->join('pegawai', 'jual_sampahs.id_pegawai', '=', 'pegawai.id_pegawai')
+       $no = 1;
+        $tgl = $detail->tgl_jual;
+        $detail_jual = DB::table('detail_juals')
+        ->join('jual_sampahs', 'detail_juals.id_jual', '=', 'jual_sampahs.id_jual')
+        ->join('pegawai', 'detail_juals.id_pegawai', '=', 'pegawai.id_pegawai')
+        ->join('sampah', 'detail_juals.id_sampah', '=', 'sampah.id_sampah')
+        ->where('tgl_jual', $tgl)
         ->select( '*' )
         ->get();
 
@@ -33,7 +41,8 @@ class RiwayatController extends Controller
         return view('user.detail', 
         [
             "tgl_jual" => $detail,
-            "detail" => $detail_jual
+            "detail" => $detail_jual,
+            "no" => $no
         ]
     );
     }
