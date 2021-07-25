@@ -2,36 +2,27 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Response;
-use Illuminate\Http\Request;
-use Illuminate\http\Support\Facades\Hash;
-use App\Http\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Http\Models\User;
 
 
 class AuthApiController extends Controller
 {
-    public function register(Request $request)
+    public function login(Request $request)
   {
-    $fields = $request->validate([
-      'name' => 'required|string',
-      'email' => 'required|string|unique:user,email',
-      'password'=> 'required|string|confirmed'
-    ]);
+    $user = User::where('email', $request-> email)->first();
     
-    $user = User::create([
-      'name' => $fields['name'],
-      'email' => $fields['email'],
-      'password' => bcrypt($fields['password'])
-    ]);
-
-    $token = $user->createToken('myapptoken')->plainTextToken;
-
-    $response =[
+    if (!$user || !\Hash::check($request->password,$user->password)){
+      return response()->json([
+        'message' => 'Password tidak sesuai'
+      ], 401);
+    }
+    $token = $user->createToken('token-name')->plainTextToken;
+    return response()->json([
+      'message' => 'success',
       'user' => $user,
-      'token' => $token
-
-    ];
-    return resnponse($response, 201);
+      'token' => $token,
+    ], 200);
   }
 }

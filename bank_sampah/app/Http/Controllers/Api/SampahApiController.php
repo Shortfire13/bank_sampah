@@ -37,7 +37,7 @@ class SampahApiController extends Controller
      */
     public function store(Request $request)
     {
-        return sampah::create($request->all());
+       
     }
 
     /**

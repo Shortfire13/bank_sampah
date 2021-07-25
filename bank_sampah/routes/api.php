@@ -2,10 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\KategoriApiController;
-use App\Http\Controllers\Api\SampahApiController;
-use App\Http\Controllers\Api\AuthApiController;
+use App\Http\Controllers\Api\loginApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +14,12 @@ use App\Http\Controllers\Api\AuthApiController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('/register', [AuthApiController::class, 'register']);
- Route::get('/sampah', [SampahApiController::class, 'index'])->name('sampah');
+// Route::group(['middleware' => 'auth:sanctum'],function() {
+// });
+// Route::post('/login', [AuthApiController::class, 'login']);
 
-
-Route::get('/kategori', [KategoriApiController::class, 'kategori'])->name('kategori');
-
-
-//protected routes
-Route::group(['middleware' => ['auth:sanctum']],function() {
-    Route::post('/sampah/{id}', [SampahApiController::class, 'store']);
+Route::group(['middleware' => 'auth:sanctum'], function(){
 });
+    
+Route::post('/login', [loginApiController::class, 'index']);
+Route::get('/logout', [loginApiController::class, 'logout']);
