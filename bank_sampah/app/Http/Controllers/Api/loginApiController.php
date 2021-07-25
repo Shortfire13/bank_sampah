@@ -39,8 +39,27 @@ class loginApiController extends Controller
         
         //kembalikan atau tampilkan response
         return response($response, 201);
+
+        //membuat register
     }
-    
+    public function register(Request $request)
+    {
+        $fields = $request->validate([
+            'nama_user' => 'required|string',
+            'username' => 'required|string',
+            'no_hp' => 'required|string',
+            'email' => 'required|string|unique:user,email',
+            'password' => 'required|string|confirmed',
+        ]);
+        $user = User::create([
+            'nama_user' => $fields['nama_user'],
+            'username' => $fields['username'],
+            'no_hp' => $fields['no_hp'],
+            'email' => $fields['email'],
+            'password' => bcrypt($fields['password'])
+        ]);
+        
+    }
     /**
      * logout
      *

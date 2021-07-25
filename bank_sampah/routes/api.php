@@ -24,5 +24,5 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::get('/form', [FormApiController::class, 'form']);
     Route::get('/logout', [loginApiController::class, 'logout']);
 });
-    
+Route::post('/register', [loginApiController::class, 'register']);    
 Route::post('/login', [loginApiController::class, 'index']);
