@@ -17,10 +17,10 @@ class CreateAdminTable extends Migration
             $table->id('id_admin')->unique();
             $table->string('nama_admin', 50);
             $table->text('alamat');
-            $table->string('email', 30)->unique();
+            $table->string('umur', 2);
+            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
             $table->string('username', 15);
             $table->string('password');
-            $table->string('foto');
             $table->timestamps();
         });
     }

@@ -37,7 +37,34 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all($request));
+        $validated = $request->validate([
+            'nama_admin' => 'required|string|max:50',
+            'alamat' => 'required|string',
+            'umur' => 'required|string|max:2',
+            'jenis_kelamin' => 'required',
+            'no_telp' => 'required|string|max:13',
+            'username' => 'required|string|min:6|max:10|unique:admin,username',
+            'password' => ['required', 'string', 'min:8'],
+            // 'foto' => 'required|mimes:jpg,bmp,png,jpeg|max:1024',
+        ],[
+            //required massage
+            'nama_admin.required' => 'Nama Admin Belum Diisi',
+            'alamat.required' => 'Alamat Belum Diisi',
+            'umur.required' => 'Usia Belum Diisi',
+            'jenis_kelamin.required' => 'Jenis Kelamin Belum Dipilih',
+            'no_telp.required' => 'Nomor Telepon Belum Diisi',
+            'username.required' => 'Username Belum Diisi',
+            'password.required' => 'Password Belum Diisi',
+            // 'foto.required' => 'Foto Belum Diisi',
+            
+        ]);
+        //upload gambar
+        // $foto = $request->foto;
+        // $fileName = $request->nama_admin.'.'.$foto->extension();
+        // $file->move(public_path('admin/assets/img_admin'), $fileName);
+
+        Admin::create($request->all());
+        return redirect('dash/adm')->with('message', 'Data Berhasil Di Tambahkan');
     }
 
     /**

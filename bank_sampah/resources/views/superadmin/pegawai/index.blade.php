@@ -14,6 +14,12 @@
                                     <a href="/dash/pegawai/add" type="button" class="btn btn-primary"><i class="lnr lnr-plus-circle"></i>Tambah Data</a>
                                 </div>
                             </div>
+                            @if (session('message'))
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <i class="fa fa-check-circle"></i> {{session('message')}}
+                            </div>
+                            @endif
                             <div class="panel-body">
                                 <table class="table table-bordered">
                                     <thead>
@@ -22,8 +28,8 @@
                                             <th scope="col">Nama Pegawai</th>
                                             <th scope="col">Alamat</th>
                                             <th scope="col">Umur</th>
+                                            <th scope="col">Jenis Kelamin</th>
                                             <th scope="col">No. Telepon</th>
-                                            <th scope="col">Email</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
@@ -35,8 +41,8 @@
                                                 <td>{{$data->nama_pegawai}}</td> 
                                                 <td>{{$data->alamat}}</td> 
                                                 <td>{{$data->umur}} th</td> 
-                                                <td>{{$data->no_telp}}</td> 
-                                                <td>{{$data->email}}</td>
+                                                <td>{{$data->jenis_kelamin}}</td> 
+                                                <td>{{$data->no_telp}}</td>
                                                 <td>
                                                     <a href=""
                                                     class="btn btn-primary mr-2" data-tooltip="tooltip" data-placement="bottom"

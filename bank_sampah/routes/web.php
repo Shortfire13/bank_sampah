@@ -33,7 +33,8 @@ Route::get('/detail/{detail:tgl_jual}', [RiwayatController::class, 'detail']);
 //Halaman Admin
 Route::get('/dash', [DashboardController::class, 'index']);
 Route::get('/dash/adm', [AdminController::class, 'index']);
-Route::post('/dash/adm/add', [AdminController::class, 'create']);
+Route::get('/dash/adm/add', [AdminController::class, 'create']);
+Route::post('/dash/admin/add', [AdminController::class, 'store']);
 
 //Pegawai
 Route::get('/dash/pegawai', [PegawaiController::class, 'index']);

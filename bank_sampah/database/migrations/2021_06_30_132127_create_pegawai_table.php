@@ -18,10 +18,8 @@ class CreatePegawaiTable extends Migration
             $table->string('nama_pegawai', 50);
             $table->text('alamat');
             $table->string('umur', 2);
+            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
             $table->string('no_telp', 15);
-            $table->string('email', 50)->unique();
-            $table->string('username', 10);
-            $table->string('password');
             $table->timestamps();
         });
     }
