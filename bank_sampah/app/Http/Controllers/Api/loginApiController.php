@@ -46,11 +46,12 @@ class loginApiController extends Controller
      *
      * @return void
      */
-    public function logout()
+    public function logout(Request $request)
     {
-        auth()->logout();
+       $user = $request->user();
+       $user->currentAccessToken()->delete();
         return response()->json([
-            'success'    => true
+            'success'    => 'Berhasil Log out'
         ], 200);
     }
 }
