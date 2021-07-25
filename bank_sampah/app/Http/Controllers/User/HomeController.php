@@ -33,6 +33,9 @@ class HomeController extends Controller
     {
         return view('user.produk');
     }
-
+    public function profileuser()
+    {
+        return view('user.profileuser');
+    }
    
 }
