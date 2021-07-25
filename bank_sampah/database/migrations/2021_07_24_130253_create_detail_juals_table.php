@@ -16,15 +16,14 @@ class CreateDetailJualsTable extends Migration
         Schema::create('detail_juals', function (Blueprint $table) {
             $table->id('id_detail')->unique();
             $table->biginteger('id_jual')->unsigned();
-            $table->biginteger('id_sampah')->unsigned(); 
-            $table->bigInteger('id_pegawai')->unsigned();           
+            $table->biginteger('id_sampah')->unsigned();           
             $table->integer('jumlak_kg');
             $table->integer('subtotal');
         });
         Schema::table('detail_juals', function (Blueprint $table) {
             $table->foreign('id_jual')->references('id_jual')->on('jual_sampahs')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_sampah')->references('id_sampah')->on('sampah')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_pegawai')->references('id_pegawai')->on('pegawai')->onDelete('cascade')->onUpdate('cascade');
+           
         });
     }
 

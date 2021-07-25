@@ -31,10 +31,14 @@ class RiwayatController extends Controller
         $tgl = $detail->tgl_jual;
         $detail_jual = DB::table('detail_juals')
         ->join('jual_sampahs', 'detail_juals.id_jual', '=', 'jual_sampahs.id_jual')
-        ->join('pegawai', 'detail_juals.id_pegawai', '=', 'pegawai.id_pegawai')
         ->join('sampah', 'detail_juals.id_sampah', '=', 'sampah.id_sampah')
         ->where('tgl_jual', $tgl)
         ->select( '*' )
+        ->get();
+        $pegawai = DB::table('jual_sampahs')
+        ->join('pegawai', 'jual_sampahs.id_pegawai', '=', 'pegawai.id_pegawai')
+        ->where('tgl_jual', $tgl)
+        ->select (' * ')
         ->get();
 
         // return view('user.detail', compact('detail_jual'));
@@ -42,6 +46,7 @@ class RiwayatController extends Controller
         [
             "tgl_jual" => $detail,
             "detail" => $detail_jual,
+            "pegawai" => $pegawai,
             "no" => $no
         ]
     );
