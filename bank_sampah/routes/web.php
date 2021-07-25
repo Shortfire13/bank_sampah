@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/register', [HomeController::class, 'register'])->name('register');
 Route::get('/login', [HomeController::class, 'login'])->name('login');
+Route::get('/loginadmin', [HomeController::class, 'loginadmin'])->name('loginadmin');
 Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
 Route::get('/profileuser', [HomeController::class, 'profileuser'])->name('profileuser');

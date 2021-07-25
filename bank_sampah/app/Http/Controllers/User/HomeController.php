@@ -37,5 +37,9 @@ class HomeController extends Controller
     {
         return view('user.profileuser');
     }
+    public function loginadmin()
+    {
+        return view('auth.loginadmin');
+    }
    
 }
