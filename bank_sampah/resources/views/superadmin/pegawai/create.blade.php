@@ -15,13 +15,13 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form action="{{ url('dash/pegawai/add')}}" method="POST">
+                            <form action="{{ url('dash/pegawai/add')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="nama_pegawai" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="nama_pegawai"
-                                        placeholder="Masukkan Nama Anda">
+                                        placeholder="Masukkan Nama Anda" >
                                     </div>
                                 </div>
                                 <div class="form-group row">

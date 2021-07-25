@@ -22,8 +22,15 @@ class PegawaiController extends Controller
 
     public function store(Request $request)
     {
-        Pegawai::create($request->all());
-        return redirect('/dash/pegawai');
+        $validated = $request->validate([
+            'nama_pegawai' => 'required',
+            'alamat' => 'required',
+            'umur' => 'required',
+            'no_tlp' => 'required',
+            'email' => 'required',
+            'username' => 'required|unique:pegawai,username|max:10',
+            'password ' => ['required', 'confirmed', password::min(8)],
+        ]);
     }
 
     

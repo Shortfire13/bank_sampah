@@ -37,7 +37,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        dd('test');
+        dd($request->all($request));
     }
 
     /**
