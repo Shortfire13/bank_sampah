@@ -58,8 +58,13 @@ class loginApiController extends Controller
             'email' => $fields['email'],
             'password' => bcrypt($fields['password'])
         ]);
-        
+        return response()->json([
+            'success'    => 'Berhasil Membuat akun Silahkan Login'
+        ], 200);
+      
     }
+
+    
     /**
      * logout
      *

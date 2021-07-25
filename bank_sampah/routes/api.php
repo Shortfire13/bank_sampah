@@ -23,6 +23,9 @@ use App\Http\Controllers\Api\FormApiController;
 Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::get('/form', [FormApiController::class, 'form']);
     Route::get('/logout', [loginApiController::class, 'logout']);
+    Route::get('/edit/{id}', [FormApiController::class, 'edit']);
+    Route::post('/edit/{id}', [FormApiController::class, 'update']);
+    
 });
-Route::post('/register', [loginApiController::class, 'register']);    
+Route::post('/register', [loginApiController::class, 'register']);
 Route::post('/login', [loginApiController::class, 'index']);

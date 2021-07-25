@@ -85,12 +85,3 @@ class SampahApiController extends Controller
         //
     }
 }
-//   {
-//         $sampah = sampah::find($id);
-//         return response()->json(['message' => 'Succes','Data' => $sampah]);
-//   }
-//   public function sampah()
-//   {
-//     $sampah = sampah::all();
-//     return response()->json(['message' => 'succes','data'=> $sampah]);
-//}
