@@ -35,9 +35,13 @@ Route::get('/detail/{detail:tgl_jual}', [RiwayatController::class, 'detail']);
 Route::get('/dash', [DashboardController::class, 'index']);
 
 //Admin
-Route::get('/dash/adm', [AdminController::class, 'index']);
-Route::get('/dash/adm/add', [AdminController::class, 'create']);
-Route::post('/dash/adm/add', [AdminController::class, 'store']);
+Route::get('/dash/admins', [AdminController::class, 'index']);
+Route::get('/dash/admins/add', [AdminController::class, 'create']);
+Route::post('/dash/admins', [AdminController::class, 'store']);
+Route::get('/dash/admins/edit/{id_admin}', [AdminController::class, 'edit']);
+Route::post('/dash/admins/update/{id_admin}', [AdminController::class, 'update']);
+Route::get('/dash/admins/delete/{id_admin}', [AdminController::class, 'destroy']);
+
 
 //Pegawai
 Route::get('/dash/pegawai', [PegawaiController::class, 'index']);

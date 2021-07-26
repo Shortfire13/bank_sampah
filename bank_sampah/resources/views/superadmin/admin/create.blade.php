@@ -11,11 +11,11 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">@yield('title')</h3>
                             <div class="right">
-                                <a href="/dash/admin" type="button" class="btn btn-primary"><i class="lnr lnr-arrow-left"></i>Back</a>
+                                <a href="/dash/admins" type="button" class="btn btn-primary"><i class="lnr lnr-arrow-left"></i>Back</a>
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form action="{{ url('dash/adm/add')}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('dash/admins')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="nama_admin" class="col-sm-2 col-form-label">Nama Admin</label>
@@ -96,7 +96,7 @@
                                     <label for="password" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
                                         <input type="password" class="form-control" name="password"
-                                        placeholder="Masukkan Password Anda">
+                                        placeholder="Masukkan Password Anda" value="{{old('password')}}">
                                         <div class="text-danger">
                                             @error('password')
                                                 {{ $message }}

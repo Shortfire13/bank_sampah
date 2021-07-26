@@ -5,15 +5,21 @@ namespace App\Http\Controllers\AdminCallTrash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rules\Password;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->Admin = new Admin();
+    }
+    
     public function index()
     {
-        $admin = Admin::all();
-        return view('superadmin.admin.index', compact(['admin']));
+        $data = [
+            'admin' => $this->Admin->allData(),
+        ];
+        return view('superadmin.admin.index', $data);
+
     }
 
     public function create()
@@ -24,25 +30,23 @@ class AdminController extends Controller
     public function store()
     {
         Request()->validate([
-            'nama_admin' => 'required|string|max:50',
-            'alamat' => 'required|string',
-            'umur' => 'required|string|max:2',
+            'nama_admin' => 'required|max:50',
+            'alamat' => 'required',
+            'umur' => 'required|max:2',
             'jenis_kelamin' => 'required',
-            'no_telp' => 'required|string|max:13',
+            'no_telp' => 'required|max:13',
             'username' => 'required|unique:admin,username',
-            'password' => ['required', Password::min(8)]
+            'password' => 'required|min:8',
         ],[
             //required massage
-            'nama_admin.required' => 'Nama Admin Belum Diisi',
+            'nama_admin.required' => 'Nama Pegawai Belum Diisi',
             'alamat.required' => 'Alamat Belum Diisi',
             'umur.required' => 'Usia Belum Diisi',
             'jenis_kelamin.required' => 'Jenis Kelamin Belum Dipilih',
             'no_telp.required' => 'Nomor Telepon Belum Diisi',
             'username.required' => 'Username Belum Diisi',
+            'username.unique' => 'Username Sudah Dipakai',
             'password.required' => 'Password Belum Diisi',
-
-            //uniqe
-            'username.uniqe' => 'Username Telah di Pakai',
 
         ]);
 
@@ -55,10 +59,9 @@ class AdminController extends Controller
             'username' => Request()->username,
             'password' => Request()->password,
         ];
-
         // dd($data);
-        Admin::create($data);
-        return redirect('dash/adm')->with('message', 'Data Berhasil Di Tambahkan');
+        $this->Admin->addData($data);
+        return redirect('dash/admins')->with('message', 'Data Berhasil Di Tambahkan');
     }
 
     public function show($id)
@@ -66,19 +69,69 @@ class AdminController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit($id_admin)
     {
-        //
+        if (!$this->Admin->editData($id_admin)) {
+            abort(404);
+        }
+        
+        $data = [
+            'admin'=>$this->Admin->editData($id_admin),
+        ];
+        return view('superadmin.admin.edit', $data);
     }
 
     
-    public function update(Request $request, $id)
+    public function update($id_admin)
     {
-        //
+        Request()->validate([
+            'nama_admin' => 'required|max:50',
+            'alamat' => 'required',
+            'umur' => 'required|max:2',
+            'jenis_kelamin',
+            'no_telp' => 'required|max:13',
+            'username' => 'unique:admin,username',
+            'password' => 'required|min:8',
+        ],[
+            //required massage
+            'nama_admin.required' => 'Nama Pegawai Belum Diisi',
+            'alamat.required' => 'Alamat Belum Diisi',
+            'umur.required' => 'Usia Belum Diisi',
+            'no_telp.required' => 'Nomor Telepon Belum Diisi',
+            'username.unique' => 'Username Sudah Dipakai',
+            'password.required' => 'Password Belum Diisi',
+
+        ]);
+
+        if (Request()->jenis_kelamin <> "") {
+            $data = [
+                'nama_admin' => Request()->nama_admin,
+                'alamat' => Request()->alamat,
+                'umur' => Request()->umur,
+                'jenis_kelamin' => Request()->jenis_kelamin,
+                'no_telp' => Request()->no_telp,
+                'username' => Request()->username,
+                'password' => Request()->password,
+            ];
+            $this->Admin->updateData($id_admin, $data);
+        } else {
+            $data = [
+                'nama_admin' => Request()->nama_admin,
+                'alamat' => Request()->alamat,
+                'umur' => Request()->umur,
+                'no_telp' => Request()->no_telp,
+                'username' => Request()->username,
+                'password' => Request()->password,
+            ];
+            $this->Admin->updateData($id_admin, $data);
+            return redirect('dash/admins')->with('message', 'Data Berhasil Di Update');
+        }
+        
     }
 
-    public function destroy($id)
+    public function destroy($id_admin)
     {
-        //
+        $this->Admin->deleteData($id_admin);
+        return redirect('dash/admins')->with('message', 'Data Berhasil Di Hapus');
     }
 }

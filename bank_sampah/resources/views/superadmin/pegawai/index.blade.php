@@ -70,7 +70,7 @@
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">{{$data->nama_pegawai}}</h4>
+              <h4 class="modal-title">Delete {{$data->nama_pegawai}}</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
