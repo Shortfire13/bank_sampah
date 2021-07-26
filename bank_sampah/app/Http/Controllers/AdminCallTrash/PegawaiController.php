@@ -9,10 +9,17 @@ use Illuminate\Validation\Rules\Password;
 
 class PegawaiController extends Controller
 {
+    public function __construct()
+    {
+        $this->Pegawai = new Pegawai();
+    }
+    
     public function index()
     {
-        $pegawai = Pegawai::all();
-        return view('superadmin.pegawai.index', compact(['pegawai']));
+        $data = [
+            'pegawai' => $this->Pegawai->allData(),
+        ];
+        return view('superadmin.pegawai.index', $data);
 
     }
 
@@ -21,14 +28,14 @@ class PegawaiController extends Controller
         return view('superadmin.pegawai.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        $validated = $request->validate([
-            'nama_pegawai' => 'required|string|max:50',
-            'alamat' => 'required|string',
-            'umur' => 'required|string|max:2',
+        Request()->validate([
+            'nama_pegawai' => 'required|max:50',
+            'alamat' => 'required',
+            'umur' => 'required|max:2',
             'jenis_kelamin' => 'required',
-            'no_telp' => 'required|string|max:13',
+            'no_telp' => 'required|max:13',
         ],[
             //required massage
             'nama_pegawai.required' => 'Nama Pegawai Belum Diisi',
@@ -37,7 +44,15 @@ class PegawaiController extends Controller
             'jenis_kelamin.required' => 'Jenis Kelamin Belum Dipilih',
             'no_telp.required' => 'Nomor Telepon Belum Diisi',
         ]);
-        Pegawai::create($request->all());
+
+        $data = [
+            'nama_pegawai' => Request()->nama_pegawai,
+            'alamat' => Request()->alamat,
+            'umur' => Request()->umur,
+            'jenis_kelamin' => Request()->jenis_kelamin,
+            'no_telp' => Request()->no_telp,
+        ];
+        $this->Pegawai->addData($data);
         return redirect('dash/pegawai')->with('message', 'Data Berhasil Di Tambahkan');
     }
 
@@ -48,20 +63,61 @@ class PegawaiController extends Controller
     }
 
     
-    public function edit($id)
+    public function edit($id_pegawai)
     {
-        //
+        if (!$this->Pegawai->editData($id_pegawai)) {
+            abort(404);
+        }
+        
+        $data = [
+            'pegawai'=>$this->Pegawai->editData($id_pegawai),
+        ];
+        return view('superadmin.pegawai.edit', $data);
     }
 
    
-    public function update(Request $request, $id)
+    public function update($id_pegawai)
     {
-        //
+        Request()->validate([
+            'nama_pegawai' => 'required|max:50',
+            'alamat' => 'required',
+            'umur' => 'required|max:2',
+            'jenis_kelamin',
+            'no_telp' => 'required|max:13',
+        ],[
+            //required massage
+            'nama_pegawai.required' => 'Nama Pegawai Belum Diisi',
+            'alamat.required' => 'Alamat Belum Diisi',
+            'umur.required' => 'Usia Belum Diisi',
+            'no_telp.required' => 'Nomor Telepon Belum Diisi',
+        ]);
+
+        if (Request()->jenis_kelamin <> "") {
+            $data = [
+                'nama_pegawai' => Request()->nama_pegawai,
+                'alamat' => Request()->alamat,
+                'umur' => Request()->umur,
+                'jenis_kelamin' => Request()->jenis_kelamin,
+                'no_telp' => Request()->no_telp,
+            ];
+            $this->Pegawai->updateData($id_pegawai, $data);
+        }else {
+            $data = [
+                'nama_pegawai' => Request()->nama_pegawai,
+                'alamat' => Request()->alamat,
+                'umur' => Request()->umur,
+                'no_telp' => Request()->no_telp,
+            ];
+            $this->Pegawai->updateData($id_pegawai, $data);
+        }
+        
+        return redirect('dash/pegawai')->with('message', 'Data Berhasil Di Update');
     }
 
 
-    public function destroy($id)
+    public function destroy($id_pegawai)
     {
-        //
+        $this->Pegawai->deleteData($id_pegawai);
+        return redirect('dash/pegawai')->with('message', 'Data Berhasil Di Hapus');
     }
 }

@@ -15,7 +15,7 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form action="{{ url('dash/pegawai/add')}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('dash/pegawai')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="nama_pegawai" class="col-sm-2 col-form-label">Nama Pegawai</label>

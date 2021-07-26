@@ -50,11 +50,3 @@ class User extends  Authenticatable{
     }
 
 }
-
-
-// class User extends Model
-// {
-   
-//     protected $table ='user';
-
-// }

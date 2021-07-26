@@ -19,7 +19,8 @@ class CreateAdminTable extends Migration
             $table->text('alamat');
             $table->string('umur', 2);
             $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
-            $table->string('username', 15);
+            $table->string('no_telp', 15);
+            $table->string('username');
             $table->string('password');
             $table->timestamps();
         });

@@ -15,7 +15,7 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <form action="{{ url('dash/admin/add')}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('dash/adm/add')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="nama_admin" class="col-sm-2 col-form-label">Nama Admin</label>
@@ -98,19 +98,7 @@
                                         <input type="password" class="form-control" name="password"
                                         placeholder="Masukkan Password Anda">
                                         <div class="text-danger">
-                                            @error('no_telp')
-                                                {{ $message }}
-                                            @enderror   
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="foto" class="col-sm-2 col-form-label">Foto Admin</label>
-                                    <div class="col-sm-10">
-                                        <input type="file" class="form-control" name="foto"
-                                        placeholder="Masukkan Foto Anda" value="{{old('foto')}}">
-                                        <div class="text-danger">
-                                            @error('foto')
+                                            @error('password')
                                                 {{ $message }}
                                             @enderror   
                                         </div>

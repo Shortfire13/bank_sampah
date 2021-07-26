@@ -31,7 +31,6 @@
                                             <th scope="col">Jenis Kelamin</th>
                                             <th scope="col">No. Telepon</th>
                                             <th scope="col">Username</th>
-                                            <th scope="col">Foto</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
@@ -46,7 +45,6 @@
                                                 <td>{{$data->jenis_kelamin}}</td> 
                                                 <td>{{$data->no_telp}}</td>
                                                 <td>{{$data->username}}</td>
-                                                <td>{{$data->foto}}</td>
                                                 <td>
                                                     <a href=""
                                                     class="btn btn-primary mr-2" data-tooltip="tooltip" data-placement="bottom"
