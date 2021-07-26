@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         $id = $request->user()->id;
         $profile = DB::table('user')->where('id', $id)->get();
-        return view('user.profile', compact('profile'));
+        return view('user.profileuser', compact('profile'));
     }
     public function produk()
     {

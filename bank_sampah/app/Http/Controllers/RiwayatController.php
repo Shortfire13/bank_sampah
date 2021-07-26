@@ -38,7 +38,7 @@ class RiwayatController extends Controller
         $pegawai = DB::table('jual_sampahs')
         ->join('pegawai', 'jual_sampahs.id_pegawai', '=', 'pegawai.id_pegawai')
         ->where('tgl_jual', $tgl)
-        ->select (' * ')
+        ->select ('*')
         ->get();
 
         // return view('user.detail', compact('detail_jual'));

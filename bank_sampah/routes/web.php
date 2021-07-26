@@ -27,7 +27,7 @@ Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::get('/loginadmin', [HomeController::class, 'loginadmin'])->name('loginadmin');
 Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
 Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
-Route::get('/profileuser', [HomeController::class, 'profileuser'])->name('profileuser');
+//Route::get('/profileuser', [HomeController::class, 'profileuser'])->name('profileuser');
 Route::get('/riwayat', [RiwayatController::class, 'riwayat'])->name('riwayat');
 Route::get('/detail/{detail:tgl_jual}', [RiwayatController::class, 'detail']);
 

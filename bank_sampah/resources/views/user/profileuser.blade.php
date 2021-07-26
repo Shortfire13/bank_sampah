@@ -28,30 +28,33 @@
                 </div>
                 <div class="card-body">
                     <form>
+                        @foreach ($profile as $item)
+                            
+                        
                         <div class="form-group row">
                             <label for="staticEmail" class="col-sm-2 col-form-label">Nama Lengkap</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="staticEmail" value="Hanif Satrio Rimamtomo">
+                                <input type="text" class="form-control" id="staticEmail" value="{{ $item->nama_user }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail"
-                                    value="hanifsatrio12@gmail.com">
+                                    value="{{ $item->email }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="staticEmail" class="col-sm-2 col-form-label">Username</label>
                             <div class="col-sm-10">
                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail"
-                                    value="Shortfire13">
+                                    value="{{ $item->username }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="staticEmail" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="staticEmail" value="089698672710">
+                                <input type="text" class="form-control" id="staticEmail" value="{{ $item->no_hp }}">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -60,6 +63,7 @@
                                 <input type="password" class="form-control" id="staticEmail" placeholder="Masukkan Password Baru Anda" value="">
                             </div>
                         </div>
+                        @endforeach
                         <div class="mt-5"></div>
                         <a href="" class="btn btn-success">Perbarui</a>
                     </form>
